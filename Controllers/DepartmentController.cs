@@ -1,10 +1,11 @@
 ﻿using CompanyDemo.Filters;
 using CompanyDemo.Models;
 using CompanyDemo.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CompanyDemo.Controllers;
-
+[Authorize]
 public class DepartmentController : Controller
 {
     private readonly IDepartmentRepository _departmentRepo;

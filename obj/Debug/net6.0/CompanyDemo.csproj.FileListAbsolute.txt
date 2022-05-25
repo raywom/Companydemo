@@ -75,3 +75,4 @@ C:\Users\rkuan\RiderProjects\CompanyDemo\CompanyDemo\obj\Debug\net6.0\refint\Com
 C:\Users\rkuan\RiderProjects\CompanyDemo\CompanyDemo\obj\Debug\net6.0\CompanyDemo.pdb
 C:\Users\rkuan\RiderProjects\CompanyDemo\CompanyDemo\obj\Debug\net6.0\CompanyDemo.genruntimeconfig.cache
 C:\Users\rkuan\RiderProjects\CompanyDemo\CompanyDemo\obj\Debug\net6.0\ref\CompanyDemo.dll
+C:\Users\rkuan\RiderProjects\CompanyDemo\CompanyDemo\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

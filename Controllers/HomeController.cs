@@ -3,25 +3,24 @@ using CompanyDemo.Models;
 using CompanyDemo.Repository;
 using Microsoft.AspNetCore.Mvc;
 using CompanyDemo.Filters;
-namespace CompanyDemo.Controllers;
+using CompanyDemo.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
+namespace CompanyDemo.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    public HomeController(ILogger<HomeController> logger)
+    private readonly IUserRepository _userRepository;
+    
+    public HomeController(ILogger<HomeController> logger, IUserRepository userRepository)
     {
         _logger = logger;
+        _userRepository = userRepository;
     }
+    
     [CustomResourceFilter]
     public IActionResult Index()
     {
-        // if (BrowserProperties.IsGoodBrowser(HttpContext.Request))
-        // {
-        //     return View();
-        // }
-
-        //return RedirectToAction("ErrorUnsupportedBrowser");
-
         return View();
     }
 
