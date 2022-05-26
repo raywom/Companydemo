@@ -42,3 +42,7 @@ public class HomeController : Controller
         return View(new ErrorUnsupportedBrowser());
     }
 }
+
+public class ErrorUnsupportedBrowser
+{
+}
