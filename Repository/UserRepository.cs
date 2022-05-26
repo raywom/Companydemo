@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Security.Claims;
 using CompanyDemo.Interfaces;
 using CompanyDemo.Models;
 using Dapper;
@@ -10,9 +11,11 @@ namespace CompanyDemo.Repository;
 public class UserRepository : IUserRepository
 {
     private IDbConnection dbConnection;
+    private IHttpContextAccessor _httpContextAccessor;
 
-    public UserRepository(IConfiguration configuration)
+    public UserRepository(IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
     {
+        _httpContextAccessor = httpContextAccessor;
         this.dbConnection = new SqlConnection(configuration.GetConnectionString("DefaultConnection"));
     }
     
@@ -32,6 +35,16 @@ public class UserRepository : IUserRepository
     {
         var sql = "SELECT * FROM Users WHERE Email = @UserEmail AND Password = @UserPassword";
         return dbConnection.Query<User>(sql, new{@Email = email, @Password = password}).Single();
+    }
+    
+    public string GetMyName()
+    {
+        var result = string.Empty;
+        if (_httpContextAccessor.HttpContext != null)
+        {
+            result = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Name);
+        }
+        return result;
     }
     
     public void Delete(int id)

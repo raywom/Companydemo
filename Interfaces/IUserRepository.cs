@@ -11,4 +11,6 @@ public interface IUserRepository
     User Update(User user);
 
     void Delete(int id);
+
+    string GetMyName();
 }
