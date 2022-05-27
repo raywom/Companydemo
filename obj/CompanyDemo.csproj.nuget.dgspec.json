@@ -46,6 +46,14 @@
               "target": "Package",
               "version": "[2.0.78, )"
             },
+            "Microsoft.AspNetCore.Mvc.Formatters.Json": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Formatters.Xml": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.0-preview.4.22229.2, )"

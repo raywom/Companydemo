@@ -11,8 +11,11 @@ builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 //builder.Services.AddSingleton<BrowserProperties>();
-
-
+builder.Services.AddMvc().AddXmlDataContractSerializerFormatters();
+builder.Services.AddControllers(options =>
+{
+    options.RespectBrowserAcceptHeader = true;
+}).AddXmlSerializerFormatters();
 
 //builder.Services.AddScoped<IDepartmentRepository, DepartmentRepositoryContrib>();
 //builder.Services.AddScoped<IDepartmentRepository, DepartmentRepositoryStored>();

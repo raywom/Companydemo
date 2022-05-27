@@ -1,10 +1,11 @@
 ﻿using System.Diagnostics;
+using System.Text;
 using CompanyDemo.Models;
 using CompanyDemo.Repository;
 using Microsoft.AspNetCore.Mvc;
 using CompanyDemo.Filters;
 namespace CompanyDemo.Controllers;
-
+[FormatFilter]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
@@ -15,15 +16,34 @@ public class HomeController : Controller
     [CustomResourceFilter]
     public IActionResult Index()
     {
-        // if (BrowserProperties.IsGoodBrowser(HttpContext.Request))
-        // {
-        //     return View();
-        // }
-
-        //return RedirectToAction("ErrorUnsupportedBrowser");
-
         return View();
     }
+
+    [HttpGet("Home/text/{privacy}")]
+    public IActionResult Privacy(string privacy)
+    {
+        return Content(privacy);
+    }
+    [HttpGet]
+    public IEnumerable<string> Get()
+    {
+        IEnumerable<string> result = new string[] { "XML", "JSON", "XML3" };
+        return result;
+    }
+    [HttpGet]
+    [Produces("application/json")]
+    public IEnumerable<string> GetJson()
+    {
+        IEnumerable<string> result = new string[] { "JSON#", "JSON2", "JSON3" };
+        return result;
+    }
+    [HttpGet("home/getformatfromroute/{format}")]
+    public IEnumerable<string> GetFormatFromRoute(string format)
+    {
+        IEnumerable<string> result = new string[] { "XML#", "JSON2", "XML" };
+        return result;
+    }
+
 
     public IActionResult Privacy()
     {

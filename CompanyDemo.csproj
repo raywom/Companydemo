@@ -10,6 +10,8 @@
     <ItemGroup>
       <PackageReference Include="Dapper" Version="2.0.123" />
       <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Json" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Xml" Version="2.2.0" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0-preview.4.22229.2" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0-preview.4.22229.2">
         <PrivateAssets>all</PrivateAssets>
