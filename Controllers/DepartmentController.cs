@@ -1,24 +1,31 @@
 ﻿using CompanyDemo.Filters;
+using CompanyDemo.Interfaces;
 using CompanyDemo.Models;
 using CompanyDemo.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CompanyDemo.Controllers;
-[Authorize]
 public class DepartmentController : Controller
 {
     private readonly IDepartmentRepository _departmentRepo;
-
-    public DepartmentController(IDepartmentRepository deptRepo)
+    private readonly IEmployeeRepository _employeeRepo;
+    public DepartmentController(IDepartmentRepository deptRepo, IEmployeeRepository employeeRepo)
     {
         _departmentRepo = deptRepo;
+        _employeeRepo = employeeRepo;
     }
 
     // GET: Companies
     public IActionResult Index()
     {
-        return View(_departmentRepo.GetAll());
+        var departments = _departmentRepo.GetAll();
+        foreach (var department in departments)
+        {
+            department.Employees = _employeeRepo.FindByDepartmentId(department.Id);
+        }
+        
+        return View(departments);
     }
 
     // GET: Companies/Details/5
@@ -59,6 +66,7 @@ public class DepartmentController : Controller
 
         return View(department);
     }
+    
     [CustomActionFilter]
     // GET: Companies/Edit/5
     public IActionResult Edit(int? id)
@@ -76,6 +84,7 @@ public class DepartmentController : Controller
 
         return View(department);
     }
+    
     [CustomActionFilter]
     // POST: Companies/Edit/5
     // To protect from overposting attacks, enable the specific properties you want to bind to, for 

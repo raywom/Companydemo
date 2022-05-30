@@ -32,7 +32,7 @@ public class DepartmentRepository : IDepartmentRepository
 
     public List<Department> GetAll()
     {
-        var sql = "SELECT * FROM Department";
+        var sql = "SELECT * FROM Department, Employee";
         return dbConnection.Query<Department>(sql).ToList();
     }
 

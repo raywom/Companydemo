@@ -19,24 +19,40 @@ public class UserRepository : IUserRepository
         this.dbConnection = new SqlConnection(configuration.GetConnectionString("DefaultConnection"));
     }
     
-    public User Create(User user)
-    {
-        var id = dbConnection.Insert(user);
-        user.Id = (int)id;
-        return user;
-    }
+    // public User Create(User user)
+    // {
+    //     var sql = "INSERT INTO Department(DeptName, MgrId) " +
+    //               "VALUES(@DeptName, @MgrId) SELECT CAST(SCOPE_IDENTITY() as int);";
+    //
+    //     var sql = "INSERT INTO User(FirstName, LastName, Email, Password, DepartmentId) " +
+    //               "VALUES(@FirstName, @LastName, @Email, @Password, @DepartmentId) SELECT CAST(SCOPE_IDENTITY() as int);";
+    //     var id = dbConnection.Query<string>(sql, user).Single();
+    //     user.Id = id;
+    //     return user;
+    // }
     
     public List<User> GetAll()
     {
         return dbConnection.GetAll<User>().ToList();
     }
-    
+
+    public User Create(User user)
+    {
+        throw new NotImplementedException();
+    }
+
     public User Find(string email, string password)
     {
         var sql = "SELECT * FROM Users WHERE Email = @UserEmail AND Password = @UserPassword";
         return dbConnection.Query<User>(sql, new{@Email = email, @Password = password}).Single();
     }
-    
+
+    public User Find(string id)
+    {
+        var sql = "SELECT * FROM Users WHERE Id = @UserId";
+        return dbConnection.Query<User>(sql, new{@Id = id}).Single();
+    }
+
     public string GetMyName()
     {
         var result = string.Empty;
@@ -47,7 +63,7 @@ public class UserRepository : IUserRepository
         return result;
     }
     
-    public void Delete(int id)
+    public void Delete(string id)
     {
         dbConnection.Delete(new User(){ Id = id });
 

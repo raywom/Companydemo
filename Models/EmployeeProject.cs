@@ -1,10 +1,16 @@
 ﻿using Dapper.Contrib.Extensions;
+using Microsoft.EntityFrameworkCore;
 
 namespace CompanyDemo.Models;
 
+[PrimaryKey("Id")]
 public class EmployeeProject
 {
+    
     public int Id { get; set; }
+    
+    
+    
     public int EmployeeId { get; set; }
     public int ProjectId { get; set; }
     

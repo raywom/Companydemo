@@ -76,3 +76,8 @@ C:\Users\rkuan\RiderProjects\CompanyDemo\CompanyDemo\obj\Debug\net6.0\CompanyDem
 C:\Users\rkuan\RiderProjects\CompanyDemo\CompanyDemo\obj\Debug\net6.0\CompanyDemo.genruntimeconfig.cache
 C:\Users\rkuan\RiderProjects\CompanyDemo\CompanyDemo\obj\Debug\net6.0\ref\CompanyDemo.dll
 C:\Users\rkuan\RiderProjects\CompanyDemo\CompanyDemo\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\rkuan\RiderProjects\CompanyDemo\CompanyDemo\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\rkuan\RiderProjects\CompanyDemo\CompanyDemo\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\rkuan\RiderProjects\CompanyDemo\CompanyDemo\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\rkuan\RiderProjects\CompanyDemo\CompanyDemo\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\rkuan\RiderProjects\CompanyDemo\CompanyDemo\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

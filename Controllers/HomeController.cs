@@ -4,6 +4,7 @@ using CompanyDemo.Repository;
 using Microsoft.AspNetCore.Mvc;
 using CompanyDemo.Filters;
 using CompanyDemo.Interfaces;
+using CompanyDemo.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 
 namespace CompanyDemo.Controllers;
