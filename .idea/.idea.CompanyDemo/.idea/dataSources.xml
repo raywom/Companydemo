@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="CompanyDemo@PF1EVFP9" uuid="5e2b801d-6cbb-4c8d-925c-698648ec494a">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://PF1EVFP9\SQLEXPRESS;database=CompanyDemo</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <driver-properties>
+        <property name="encrypt" value="false" />
+      </driver-properties>
+    </data-source>
+  </component>
+</project>
