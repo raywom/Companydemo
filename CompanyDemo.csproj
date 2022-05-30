@@ -64,10 +64,13 @@
       <_ContentIncludedByDefault Remove="Views\Manage\_StatusMessage.cshtml" />
       <_ContentIncludedByDefault Remove="Views\Manage\_ViewImports.cshtml" />
       <_ContentIncludedByDefault Remove="Pages\Roles\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Roles\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Roles\Update.cshtml" />
     </ItemGroup>
 
     <ItemGroup>
       <UpToDateCheckInput Remove="Views\Account\AccessDenied.cshtml" />
+      <UpToDateCheckInput Remove="Views\Roles\Create.cshtml" />
     </ItemGroup>
 
 </Project>

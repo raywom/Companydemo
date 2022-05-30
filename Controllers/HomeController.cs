@@ -31,7 +31,7 @@ public class HomeController : Controller
         {
             Debug.WriteLine($"Claim Type: {claim.Type} - Claim Value: {claim.Value}");
         }
-        if(User.IsInRole("Admin"))
+        if(User.IsInRole("admin"))
             return View();
         else
         {

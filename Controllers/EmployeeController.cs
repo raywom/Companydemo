@@ -2,6 +2,7 @@
 using CompanyDemo.Interfaces;
 using CompanyDemo.Models;
 using CompanyDemo.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -44,7 +45,7 @@ public class EmployeeController : Controller
 
         return View(department);
     }
-    
+    [Authorize(Roles = "admin")]
     public IActionResult Create()
     {
         IEnumerable<SelectListItem> departmentList = _departmentRepo.GetAll().Select(i => new SelectListItem
@@ -55,7 +56,7 @@ public class EmployeeController : Controller
         ViewBag.DepartmentList = departmentList;   
         return View();
     }
-    
+    [Authorize(Roles = "admin")]
     [HttpPost]
     [CustomActionFilter]
     public IActionResult Create([Bind("Id,FirstName,LastName,DateOfBirth,Address,Sex,Salary,DepartmentId")] Employee employee)
@@ -69,7 +70,7 @@ public class EmployeeController : Controller
 
         return View(employee);
     }
-    
+    [Authorize(Roles = "admin")]
     [CustomActionFilter]
     public IActionResult Edit(int? id)
     {
@@ -92,7 +93,7 @@ public class EmployeeController : Controller
 
         return View(employee);
     }
-    
+    [Authorize(Roles = "admin")]
     [HttpPost]
     [CustomActionFilter]
     public IActionResult Edit(int id, [Bind("Id,FirstName,LastName,DateOfBirth,Address,Sex,Salary,DepartmentId")] Employee employee)
@@ -116,7 +117,7 @@ public class EmployeeController : Controller
         }
         return View(employee);
     }
-    
+    [Authorize(Roles = "admin")]
     [CustomActionFilter]
     public IActionResult Delete(int? id)
     {

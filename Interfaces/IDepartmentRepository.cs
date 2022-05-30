@@ -1,6 +1,6 @@
 ﻿using CompanyDemo.Models;
 
-namespace CompanyDemo.Repository;
+namespace CompanyDemo.Interfaces;
 
 public interface IDepartmentRepository
 {

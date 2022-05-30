@@ -5,6 +5,17 @@ namespace CompanyDemo.Models;
 [Dapper.Contrib.Extensions.Table("Department")]
 public class Department
 {
+    public Department()
+    {
+    }
+
+    public Department(int id, string? deptName, int mgrId)
+    {
+        Id = id;
+        DeptName = deptName;
+        MgrId = mgrId;
+    }
+
     public string? DeptName { get; set; }
     [Key] public int Id { get; set; }
     public int MgrId { get; set; }

@@ -5,13 +5,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 namespace CompanyDemo.Filters;
 
 public class CustomResourceFilter : Attribute, IResourceFilter
-{ 
-    private readonly string[] _headers;
-
-    public CustomResourceFilter(params string[] headers)
-    {
-        _headers = headers;
-    }
+{
     public void OnResourceExecuted(ResourceExecutedContext context)
     {
 

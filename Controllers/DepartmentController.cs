@@ -44,12 +44,13 @@ public class DepartmentController : Controller
 
         return View(department);
     }
-
+    [Authorize(Roles = "admin")]
     // GET: Companies/Create
     public IActionResult Create()
     {
         return View();
     }
+    [Authorize(Roles = "admin")]
     [CustomActionFilter]
     // POST: Companies/Create
     // To protect from overposting attacks, enable the specific properties you want to bind to, for 
@@ -67,6 +68,7 @@ public class DepartmentController : Controller
         return View(department);
     }
     
+    [Authorize(Roles = "admin")]
     [CustomActionFilter]
     // GET: Companies/Edit/5
     public IActionResult Edit(int? id)
@@ -84,7 +86,7 @@ public class DepartmentController : Controller
 
         return View(department);
     }
-    
+    [Authorize(Roles = "admin")]
     [CustomActionFilter]
     // POST: Companies/Edit/5
     // To protect from overposting attacks, enable the specific properties you want to bind to, for 
@@ -101,7 +103,7 @@ public class DepartmentController : Controller
 
         return RedirectToAction(nameof(Index));
     }
-
+    [Authorize(Roles = "admin")]
     // GET: Companies/Delete/5
     public IActionResult Delete(int? id)
     {
