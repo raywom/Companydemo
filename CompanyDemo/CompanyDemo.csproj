@@ -1,0 +1,76 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>disable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <LangVersion>10</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Dapper" Version="2.0.123" />
+      <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.5" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.5" />
+      <PackageReference Include="Microsoft.Data.SqlClient" Version="4.1.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0-preview.4.22229.2" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0-preview.4.22229.2">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="6.0.5" />
+      <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="6.0.5" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\Login\Authenticate.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Roles\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Roles\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Roles\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Roles\UserList.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Users\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Users\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Users\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Users\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Account\AccessDenied.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Account\ConfirmEmail.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Account\ForgotPasswordConfirmation.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Account\Lockout.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Account\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Account\Register.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Account\ResetPassword.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Account\ResetPasswordConfirmation.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Account\SignedOut.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Account\GoogleResponse.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Admin\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Admin\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Admin\Update.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Claims\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Claims\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Role\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Role\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Role\Update.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Manage\ChangePassword.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Manage\Disable2fa.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Manage\EnableAuthenticator.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Manage\ExternalLogins.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Manage\GenerateRecoveryCodes.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Manage\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Manage\ResetAuthenticator.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Manage\SetPassword.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Manage\TwoFactorAuthentication.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Manage\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Manage\_ManageNav.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Manage\_StatusMessage.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Manage\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Roles\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Roles\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Roles\Update.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Views\Account\AccessDenied.cshtml" />
+      <UpToDateCheckInput Remove="Views\Roles\Create.cshtml" />
+    </ItemGroup>
+
+</Project>
