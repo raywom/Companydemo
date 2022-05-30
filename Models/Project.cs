@@ -10,6 +10,6 @@ public class Project
     
     [Write(false)]
     public ICollection<Employee> Employees { get; set; } = new List<Employee>();
-    [Write(false)]
-    public ICollection<EmployeeProject> EmployeeProjects { get; set; }
+    // [Write(false)]
+    // public ICollection<EmployeeProject> EmployeeProjects { get; set; }
 }

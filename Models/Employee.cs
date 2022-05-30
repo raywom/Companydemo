@@ -20,6 +20,6 @@ public class Employee
     public virtual Department Department { get; set; }
     [Write(false)]
     public virtual ICollection<Project> Projects { get; set; }
-    [Write(false)]
-    public ICollection<EmployeeProject> EmployeeProjects { get; set; }
+    // [Write(false)]
+    // public ICollection<EmployeeProject> EmployeeProjects { get; set; }
 }

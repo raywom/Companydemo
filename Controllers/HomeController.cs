@@ -4,6 +4,8 @@ using CompanyDemo.Repository;
 using Microsoft.AspNetCore.Mvc;
 using CompanyDemo.Filters;
 using CompanyDemo.Interfaces;
+using CompanyDemo.Stores;
+using CompanyDemo.Tables;
 using CompanyDemo.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 
@@ -11,12 +13,10 @@ namespace CompanyDemo.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    private readonly IUserRepository _userRepository;
     
-    public HomeController(ILogger<HomeController> logger, IUserRepository userRepository)
+    public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
-        _userRepository = userRepository;
     }
     
     [CustomResourceFilter]
@@ -24,10 +24,19 @@ public class HomeController : Controller
     {
         return View();
     }
-    [Authorize]
     public IActionResult Privacy()
     {
-        return View();
+        
+        foreach(var claim in User.Claims)
+        {
+            Debug.WriteLine($"Claim Type: {claim.Type} - Claim Value: {claim.Value}");
+        }
+        if(User.IsInRole("Admin"))
+            return View();
+        else
+        {
+            return RedirectToAction("Index");
+        }
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
